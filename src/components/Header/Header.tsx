@@ -1,8 +1,11 @@
+import HeaderStyled from "./HeaderStyled";
+
 const Header = (): JSX.Element => {
   return (
-    <header>
-      <h1>FreeGames Collection</h1>
-    </header>
+    <HeaderStyled className="main-header">
+      <img src="/logo.png" alt="FreeGames logo" height={40} width={40} />
+      <h1 className="main-header__title">FreeGames Collection</h1>
+    </HeaderStyled>
   );
 };
 
