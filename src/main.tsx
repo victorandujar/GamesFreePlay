@@ -4,6 +4,8 @@ import App from "./App";
 import "@fontsource/poppins";
 import GlobalStyles from "./styles/GlobalStyles";
 
+import "./styles/scss/styles.scss";
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <GlobalStyles />
