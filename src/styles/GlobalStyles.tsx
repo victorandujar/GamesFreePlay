@@ -10,7 +10,7 @@ body {
   background-color: #000000;
   font-family: "Poppins";
   min-height: 100vh;
-  color: yellow;
+  color: #fff;
 }
 
 h1,h2{
