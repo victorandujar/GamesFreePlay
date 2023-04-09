@@ -1,6 +1,6 @@
-import { GameStrucutre, GamesStructure } from "../../types/types";
+import { GameStructure, GamesStructure } from "../../types/types";
 
-export const mockGameOverWatch: GameStrucutre = {
+export const mockGameOverWatch: GameStructure = {
   developer: "Blizzard",
   genre: "shooter",
   id: 540,
@@ -15,7 +15,7 @@ export const mockGameOverWatch: GameStrucutre = {
   game_url: "https://www.freetogame.com/open/overwatch-2",
 };
 
-export const mockGameDiablo: GameStrucutre = {
+export const mockGameDiablo: GameStructure = {
   developer: "Blizzard",
   genre: "shooter",
   id: 540,
