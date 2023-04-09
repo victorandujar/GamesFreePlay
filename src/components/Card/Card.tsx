@@ -7,11 +7,10 @@ interface CardProps {
 
 const Card = ({ game }: CardProps): JSX.Element => {
   return (
-    <CardStyled className="card" style={{ width: 288 }}>
+    <CardStyled className="card" style={{ width: 288, height: 520 }}>
       <img src={game.thumbnail} className="card-img-top" alt={game.title} />
       <div className="card-body">
         <h5 className="card-title">{game.title}</h5>
-        <p className="card-text">{game.short_description}</p>
       </div>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">Developer: {game.developer}</li>
