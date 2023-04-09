@@ -3,7 +3,7 @@ import { GameStructure, GamesStructure } from "../../types/types";
 export const mockGameOverWatch: GameStructure = {
   developer: "Blizzard",
   genre: "shooter",
-  id: 540,
+  id: 541,
   platform: "PC",
   publisher: "Steam",
   release_date: "2020-02-01",
