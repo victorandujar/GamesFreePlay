@@ -1,8 +1,8 @@
-import { GameStrucutre } from "../../types/types";
+import { GameStructure } from "../../types/types";
 import CardStyled from "./CardStyled";
 
 interface CardProps {
-  game: GameStrucutre;
+  game: GameStructure;
 }
 
 const Card = ({ game }: CardProps): JSX.Element => {

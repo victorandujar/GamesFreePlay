@@ -1,4 +1,4 @@
-export interface GameStrucutre {
+export interface GameStructure {
   id: number;
   title: string;
   short_description: string;
@@ -11,4 +11,4 @@ export interface GameStrucutre {
   game_url: string;
 }
 
-export type GamesStructure = GameStrucutre[];
+export type GamesStructure = GameStructure[];
