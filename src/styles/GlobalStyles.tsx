@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
 
 body {
   padding: 20px;
-  background-color: #000000;
+  background-color: #1d1d1d;
   font-family: "Poppins";
   min-height: 100vh;
   color: #fff;
