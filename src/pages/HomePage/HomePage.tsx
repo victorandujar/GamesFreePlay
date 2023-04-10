@@ -3,6 +3,7 @@ import CardList from "../../components/CardList/CardList";
 import useApi from "../../hooks/useApi";
 import GamesContext from "../../store/contexts/GamesContext";
 import HomePageStyled from "./HomePageStyled";
+import ButtonForm from "../../components/ButtonForm/ButtonForm";
 
 const HomePage = (): JSX.Element => {
   const { getGames } = useApi();
@@ -15,10 +16,34 @@ const HomePage = (): JSX.Element => {
 
   return (
     <HomePageStyled className="home-page">
-      <h2 className="home-page__title" aria-label="All games">
-        All games
-      </h2>
-      <CardList games={games} />
+      <div className="home-page__hero-section hero-section">
+        <img
+          src="https://images.pexels.com/photos/7862657/pexels-photo-7862657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="gaming"
+          className="hero-section__image"
+        />
+        <h2 className="hero-section__title">
+          Find your game and start playing.
+        </h2>
+        <form className="hero-section__search">
+          <input
+            type="text"
+            className="hero-section__field-search"
+            placeholder="Find your game."
+          />
+          <ButtonForm
+            className="hero-section__button"
+            isDisabled={false}
+            text="Search"
+          />
+        </form>
+      </div>
+      <div className="home-page__content">
+        <h3 className="home-page__title" aria-label="All games">
+          All games
+        </h3>
+        <CardList games={games} />
+      </div>
     </HomePageStyled>
   );
 };

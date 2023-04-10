@@ -35,5 +35,33 @@ describe("Given a HomePage component", () => {
 
       expect(expectedOutput).toBeInTheDocument();
     });
+
+    test("Then it should show a button with the text 'Search'", () => {
+      const textButton = "Search";
+
+      render(
+        <MockContextProvider mockStore={store}>
+          <HomePage />
+        </MockContextProvider>
+      );
+
+      const expectedButton = screen.getByRole("button", { name: textButton });
+
+      expect(expectedButton).toBeInTheDocument();
+    });
+
+    test("Then it should show the text 'Find your game and start playing.'", () => {
+      const text = "Find your game and start playing.";
+
+      render(
+        <MockContextProvider mockStore={store}>
+          <HomePage />
+        </MockContextProvider>
+      );
+
+      const expectedTitle = screen.getByRole("heading", { name: text });
+
+      expect(expectedTitle).toBeInTheDocument();
+    });
   });
 });
