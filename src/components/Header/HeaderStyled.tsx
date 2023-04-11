@@ -8,7 +8,7 @@ const HeaderStyled = styled.header`
   .main-header {
     &__title {
       color: #ffe600;
-      font-size: 28px;
+      font-size: 22px;
     }
   }
 `;
