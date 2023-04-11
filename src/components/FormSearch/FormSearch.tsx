@@ -7,7 +7,7 @@ const FormSearch = (): JSX.Element => {
       <input
         type="text"
         className="form__field-search"
-        placeholder="Find your game."
+        placeholder="Find your game"
       />
       <ButtonForm className="form__button" isDisabled={false} text="Search" />
     </FormSearchStyled>
