@@ -28,4 +28,26 @@ describe("Given a useApi custom hook", () => {
       expect(dispatch).toHaveBeenCalled();
     });
   });
+
+  describe("When it is called with the function getGame", () => {
+    test("Then it should call the dispatch", async () => {
+      const {
+        result: {
+          current: { getGames },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper: ({ children }) => {
+          return (
+            <MockContextProvider mockStore={store}>
+              {children}
+            </MockContextProvider>
+          );
+        },
+      });
+
+      await getGames();
+
+      expect(dispatch).toHaveBeenCalled();
+    });
+  });
 });
