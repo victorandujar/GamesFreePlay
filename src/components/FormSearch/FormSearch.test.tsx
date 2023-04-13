@@ -1,6 +1,7 @@
-import { render, screen } from "@testing-library/react";
-import FormSearch from "./FormSearch";
+import { act, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
+import FormSearch from "./FormSearch";
 
 describe("Given a FormSearch component", () => {
   describe("When it is rendered", () => {
@@ -22,6 +23,21 @@ describe("Given a FormSearch component", () => {
       const expectedInput = screen.getByPlaceholderText(text);
 
       expect(expectedInput).toBeInTheDocument();
+    });
+  });
+
+  describe("When the user writes in the 'Search' input", () => {
+    test("Then it should changes the value of this input", async () => {
+      const textWritten = "League of Legends";
+      const placeHolderText = "Find your game";
+
+      render(<FormSearch />);
+
+      const targetInput = screen.getByPlaceholderText(placeHolderText);
+
+      await act(async () => await userEvent.type(targetInput, textWritten));
+
+      expect(targetInput).toHaveValue(textWritten);
     });
   });
 });
