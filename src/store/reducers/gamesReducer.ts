@@ -7,10 +7,13 @@ const gamesReducer = (
 ): GamesStructure => {
   let newGames: GamesStructure;
 
-  if (action.type === GamesActionType.loadGames) {
-    newGames = [...(action as LoadGamesAction).payload];
-  } else {
-    newGames = currentGames;
+  switch (action.type) {
+    case GamesActionType.loadGames:
+      newGames = [...(action as LoadGamesAction).payload];
+      break;
+
+    default:
+      newGames = currentGames;
   }
 
   return newGames;

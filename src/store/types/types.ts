@@ -6,7 +6,7 @@ export enum GamesActionType {
 
 export interface GamesAction {
   type: GamesActionType;
-  payload: unknown;
+  payload?: unknown;
 }
 
 export interface LoadGamesAction extends GamesAction {
