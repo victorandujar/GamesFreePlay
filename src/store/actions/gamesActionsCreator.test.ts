@@ -1,4 +1,4 @@
-import { mockListOfGames } from "../../mocks/gameMocks/CardMocks";
+import { mockListOfGames } from "../../mocks/gameMocks/gameMocks";
 import { GamesActionType, LoadGamesAction } from "../types/types";
 import { loadGamesActionCreator } from "./gamesActionsCreator";
 
