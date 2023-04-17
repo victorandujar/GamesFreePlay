@@ -1,9 +1,8 @@
 import { createContext } from "react";
-import { GamesStructure } from "../../types/types";
-import { GamesAction } from "../types/types";
+import { GamesAction, GamesApiResponse } from "../types/types";
 
 interface GamesInfoContextStructure {
-  games: GamesStructure;
+  games: GamesApiResponse;
   dispatch: React.Dispatch<GamesAction>;
 }
 
