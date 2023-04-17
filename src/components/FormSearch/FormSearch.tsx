@@ -21,7 +21,7 @@ const FormSearch = (): JSX.Element => {
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const game = games.find((game) => game.title === gamesSearched);
+    const game = games.games.find((game) => game.title === gamesSearched);
     gameId = game ? game.id : 0;
 
     getGame(gameId);
