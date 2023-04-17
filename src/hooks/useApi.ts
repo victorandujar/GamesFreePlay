@@ -1,8 +1,11 @@
 import axios from "axios";
-import { GameStructure, GamesStructure } from "../types/types";
+import { GameDetailStructure, GamesStructure } from "../types/types";
 import { useCallback, useContext } from "react";
 import GamesContext from "../store/contexts/GamesContext";
-import { loadGamesActionCreator } from "../store/actions/gamesActionsCreator";
+import {
+  loadGameActionCreator,
+  loadGamesActionCreator,
+} from "../store/actions/gamesActionsCreator";
 
 const urlApiSingleGame =
   "https://free-to-play-games-database.p.rapidapi.com/api/game";
@@ -51,11 +54,9 @@ const useApi = () => {
         })
         .catch(function (error) {
           return (error as Error).message;
-        })) as GameStructure;
+        })) as GameDetailStructure;
 
-      const games = Array(game);
-
-      dispatch(loadGamesActionCreator(games));
+      dispatch(loadGameActionCreator(game));
     },
     [dispatch]
   );
