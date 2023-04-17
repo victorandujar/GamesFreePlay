@@ -11,4 +11,26 @@ export interface GameStructure {
   game_url: string;
 }
 
+export interface GameDetailStructure extends GameStructure {
+  description: string;
+  minimum_system_requirements: {
+    os: string;
+    processor: string;
+    memory: string;
+    graphics: string;
+    storage: string;
+  };
+  screenshots: [
+    {
+      image: string;
+    },
+    {
+      image: string;
+    },
+    {
+      image: string;
+    }
+  ];
+}
+
 export type GamesStructure = GameStructure[];

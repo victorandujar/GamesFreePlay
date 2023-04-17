@@ -1,9 +1,11 @@
 import { renderHook } from "@testing-library/react";
 import useApi from "./useApi";
 import MockContextProvider from "../mocks/Wrapper";
-import { mockDispatch, mockStore } from "../mocks/mockStore";
+import { mockDispatch, mockGameDispatch, mockStore } from "../mocks/mockStore";
+import { mockGameDiablo } from "../mocks/gameMocks/gameMocks";
 
 const dispatch = mockDispatch;
+const gameDispatch = mockGameDispatch;
 const store = mockStore;
 
 describe("Given a useApi custom hook", () => {
@@ -33,7 +35,7 @@ describe("Given a useApi custom hook", () => {
     test("Then it should call the dispatch", async () => {
       const {
         result: {
-          current: { getGames },
+          current: { getGame },
         },
       } = renderHook(() => useApi(), {
         wrapper: ({ children }) => {
@@ -45,9 +47,9 @@ describe("Given a useApi custom hook", () => {
         },
       });
 
-      await getGames();
+      await getGame(mockGameDiablo.id);
 
-      expect(dispatch).toHaveBeenCalled();
+      expect(gameDispatch).toHaveBeenCalled();
     });
   });
 });
