@@ -1,19 +1,23 @@
-import { GamesStructure } from "../../types/types";
+import { GamesApiResponse } from "../../store/types/types";
 import Card from "../Card/Card";
 import CardListStyled from "./CardLIstStyled";
 
 interface CardListProps {
-  games: GamesStructure;
+  games: GamesApiResponse;
 }
 
 const CardList = ({ games }: CardListProps): JSX.Element => {
   return (
     <CardListStyled>
-      {games.map((game) => (
-        <li key={game.id}>
-          <Card game={game} />
-        </li>
-      ))}
+      {games.games?.length > 0 ? (
+        games.games?.map((game) => (
+          <li key={game.id}>
+            <Card game={game} />
+          </li>
+        ))
+      ) : (
+        <Card game={games.game} />
+      )}
     </CardListStyled>
   );
 };
