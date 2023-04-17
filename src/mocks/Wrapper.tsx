@@ -1,6 +1,6 @@
 import GamesContext from "../store/contexts/GamesContext";
+import { GamesApiResponse } from "../store/types/types";
 import GlobalStyles from "../styles/GlobalStyles";
-import { GamesStructure } from "../types/types";
 
 interface WrapperProps {
   children: JSX.Element | JSX.Element[];
@@ -9,7 +9,7 @@ interface WrapperProps {
 
 interface GameStoreStructure {
   dispatch: React.Dispatch<any>;
-  games: GamesStructure;
+  games: GamesApiResponse;
 }
 
 const MockContextProvider = ({ children, mockStore }: WrapperProps) => {
