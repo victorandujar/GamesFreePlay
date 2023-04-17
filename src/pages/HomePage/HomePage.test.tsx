@@ -4,6 +4,7 @@ import MockContextProvider from "../../mocks/Wrapper";
 import { mockStore } from "../../mocks/mockStore";
 import GlobalStyles from "../../styles/GlobalStyles";
 import "@testing-library/jest-dom";
+import { BrowserRouter } from "react-router-dom";
 
 const store = mockStore;
 
@@ -13,10 +14,12 @@ describe("Given a HomePage component", () => {
       const titleText = "All games";
 
       render(
-        <MockContextProvider mockStore={store}>
-          <GlobalStyles />
-          <HomePage />
-        </MockContextProvider>
+        <BrowserRouter>
+          <MockContextProvider mockStore={store!}>
+            <GlobalStyles />
+            <HomePage />
+          </MockContextProvider>
+        </BrowserRouter>
       );
 
       const expectedHeader = screen.getByRole("heading", { name: titleText });
@@ -26,9 +29,11 @@ describe("Given a HomePage component", () => {
 
     test("Then it should show a list of cards", () => {
       render(
-        <MockContextProvider mockStore={store}>
-          <HomePage />
-        </MockContextProvider>
+        <BrowserRouter>
+          <MockContextProvider mockStore={store!}>
+            <HomePage />
+          </MockContextProvider>
+        </BrowserRouter>
       );
 
       const expectedOutput = screen.getByRole("list");
@@ -40,9 +45,11 @@ describe("Given a HomePage component", () => {
       const textButton = "Search";
 
       render(
-        <MockContextProvider mockStore={store}>
-          <HomePage />
-        </MockContextProvider>
+        <BrowserRouter>
+          <MockContextProvider mockStore={store!}>
+            <HomePage />
+          </MockContextProvider>
+        </BrowserRouter>
       );
 
       const expectedButton = screen.getByRole("button", { name: textButton });
@@ -54,9 +61,11 @@ describe("Given a HomePage component", () => {
       const text = "Find your game and start playing.";
 
       render(
-        <MockContextProvider mockStore={store}>
-          <HomePage />
-        </MockContextProvider>
+        <BrowserRouter>
+          <MockContextProvider mockStore={store!}>
+            <HomePage />
+          </MockContextProvider>
+        </BrowserRouter>
       );
 
       const expectedTitle = screen.getByRole("heading", { name: text });
